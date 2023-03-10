@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        Vector3 positionini = new Vector3(48f, 0.03f, -44f);
+        Vector3 positionini = new Vector3(48f, 1.38f, -44f);
         this.transform.position = positionini ;
         _rbPlayer= GetComponent<Rigidbody>();
     }
