@@ -4,27 +4,35 @@ using UnityEngine;
 public class ZonePieges : MonoBehaviour
 {
     // Start is called before the first frame update
-    bool actif = false;
     [SerializeField] List<GameObject> _Listepieges = new List<GameObject>();
-    [SerializeField] float intensiteForce = 500;
-    List<Rigidbody> _rbPiege = new List<Rigidbody>();
+    GameManager _gameManager;
+    bool _collision = false;
+    Player _player;
+    //Material vert = Resources.Load("Materials/Wall_Mat",typeof(Material)) as Material;
 
-    void Start()
+    private void Start()
     {
-        foreach(var piege in _Listepieges) { 
-            _rbPiege.Add(piege.GetComponent<Rigidbody>());
+        _gameManager = FindObjectOfType<GameManager>();
+        _player = FindObjectOfType<Player>();
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collision");
+        if ((!_collision) && (collision.gameObject.tag == "Player"))
+        {   
+            _collision = true;
+            _player.GetComponent<MeshRenderer>().material.color = Color.red;
+            _gameManager.AugmenterPointage();
+            Debug.Log("Collision");
         }
+
+
+
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionExit(Collision collision)
     {
-        if ((!actif) && (other.gameObject.tag == "Player"))
-        {
-            foreach(var rb in _rbPiege) { 
-            rb.useGravity = true;
-            rb.AddForce(Vector3.down * intensiteForce, ForceMode.Force);
-            }
-        }
+        _player.GetComponent<MeshRenderer>().material.color = Color.white;
     }
 
 

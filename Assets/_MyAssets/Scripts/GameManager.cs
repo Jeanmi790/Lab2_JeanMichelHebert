@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     {
         _pointage = 0;
         temps = Time.time;
-        
+        Instructions();
 
     }
     void Instructions()
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     {
         _pointage++;
         _tempsperdu += 1f;
-        //Debug.Log(_tempsperdu);
+        Debug.Log(_tempsperdu);
        
 
     }

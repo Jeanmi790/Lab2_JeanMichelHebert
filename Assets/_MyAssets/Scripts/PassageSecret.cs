@@ -33,6 +33,10 @@ public class PassageSecret : MonoBehaviour
             Debug.Log("Passage débloqué");
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        player.GetComponent<MeshRenderer>().material.color = Color.white;
+    }
 
     
 }
