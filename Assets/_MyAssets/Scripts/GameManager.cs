@@ -73,9 +73,9 @@ public class GameManager : MonoBehaviour
         tempsNiv1 = temps + (1F* accrochages);
 
         nbAccrochageNiv1 = _pointage;
-
         Debug.Log("Temps Niv 1: " + tempsNiv1);
         Debug.Log("Nombre d'accrochage Niv 1: " + nbAccrochageNiv1);
+        
     }
 
     public void StatistiqueNiv2(int accrochages, float temps)
@@ -92,6 +92,18 @@ public class GameManager : MonoBehaviour
         nbAccrochageNiv3 = _pointage - nbAccrochageNiv1 - nbAccrochageNiv2;
         Debug.Log("Temps Niv 3: " + tempsNiv3);
         Debug.Log("Nombre d'accrochage Niv 3: " + nbAccrochageNiv3);
+    }
+    public void StatistiqueTotal()
+    {
+        tempsTotal = tempsNiv1 + tempsNiv2 + tempsNiv3;
+        nbAccrochageTotal = nbAccrochageNiv1 + nbAccrochageNiv2 + nbAccrochageNiv3;
+        Debug.Log("Temps Total: " + tempsTotal);
+        Debug.Log("Nombre d'accrochage Total: " + nbAccrochageTotal);
+    }
+    public void VoirStatistiqueNiv1()
+    {
+        Debug.Log("Temps Niv 1: " + tempsNiv1);
+        Debug.Log("Nombre d'accrochage Niv 1: " + nbAccrochageNiv1);
     }
 
 
