@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private int _pointage;
+    int _pointage;
     float temps;
     private float _tempsperdu;
     float tempsNiv1;
@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     int nbAccrochageNiv3;
     int nbAccrochageTotal;
 
+    
     public float TempsNiv1 { get; set; }
     public float TempsNiv2 { get; set; }
     public float TempsNiv3 { get; set; }
@@ -22,7 +23,8 @@ public class GameManager : MonoBehaviour
     public int NbAccrochageNiv2 { get; set; }
     public int NbAccrochageNiv3 { get; set; }
     public int NbAccrochageTotal { get; set; }
-    public int NbAccrochageTotal1 { get ; set; }
+    public int NbAccrochageTotal1 { get; set; }
+    public int _Pointage { get; set; }
 
     //Player p = FindGameObjectOfType("Player");
 
@@ -44,7 +46,7 @@ public class GameManager : MonoBehaviour
     {
         Instructions();
         _pointage = 0;
-        temps = Time.time;
+       
 
 
     }
@@ -58,8 +60,8 @@ public class GameManager : MonoBehaviour
     public void AugmenterPointage()
     {
         _pointage++;
-       // _tempsperdu += 1f;
-       // Debug.Log(_tempsperdu);
+        // _tempsperdu += 1f;
+        Debug.Log("Bléssé:" + _pointage);
 
 
     }
@@ -67,53 +69,70 @@ public class GameManager : MonoBehaviour
     {
         return _pointage;
     }
+    public void ResetPointage()
+    {
+        _pointage = 0;
+    }
 
     public void StatistiqueNiv1(int accrochages, float temps)
     {
-        tempsNiv1 = temps + (1F* accrochages);
+        tempsNiv1 = temps + (1F * accrochages);
 
         nbAccrochageNiv1 = _pointage;
-        Debug.Log("Temps Niv 1: " + tempsNiv1);
-        Debug.Log("Nombre d'accrochage Niv 1: " + nbAccrochageNiv1);
-        
+        //Debug.LogWarning("Temps Niv 1: " + tempsNiv1);
+        //Debug.LogWarning("Nombre d'accrochage Niv 1: " + nbAccrochageNiv1);
+
     }
 
     public void StatistiqueNiv2(int accrochages, float temps)
     {
         tempsNiv2 = temps + (1F * accrochages);
         nbAccrochageNiv2 = _pointage - nbAccrochageNiv1;
-        Debug.Log("Temps Niv 2: " + tempsNiv2);
-        Debug.Log("Nombre d'accrochage Niv 2: " + nbAccrochageNiv2);
+        //Debug.Log("Temps Niv 2: " + tempsNiv2);
+        //Debug.Log("Nombre d'accrochage Niv 2: " + nbAccrochageNiv2);
     }
 
     public void StatistiqueNiv3(int accrochages, float temps)
     {
         tempsNiv3 = temps + (1F * accrochages);
         nbAccrochageNiv3 = _pointage - nbAccrochageNiv1 - nbAccrochageNiv2;
-        Debug.Log("Temps Niv 3: " + tempsNiv3);
-        Debug.Log("Nombre d'accrochage Niv 3: " + nbAccrochageNiv3);
+        //Debug.Log("Temps Niv 3: " + tempsNiv3);
+        //Debug.Log("Nombre d'accrochage Niv 3: " + nbAccrochageNiv3);
     }
     public void StatistiqueTotal()
     {
         tempsTotal = tempsNiv1 + tempsNiv2 + tempsNiv3;
         nbAccrochageTotal = nbAccrochageNiv1 + nbAccrochageNiv2 + nbAccrochageNiv3;
-        Debug.Log("Temps Total: " + tempsTotal);
-        Debug.Log("Nombre d'accrochage Total: " + nbAccrochageTotal);
+        //Debug.Log("Temps Total: " + tempsTotal);
+        //Debug.Log("Nombre d'accrochage Total: " + nbAccrochageTotal);
     }
     public string VoirStatistiqueNiv1()
     {
-       return "Temps Niv 1: " + tempsNiv1 + " Nombre d'accrochage Niv 1: " + nbAccrochageNiv1;
+        return "Temps Niv 1: " + tempsNiv1 + " Nombre d'accrochage Niv 1: " + nbAccrochageNiv1;
+    }
+    public string VoirStatistiqueNiv2()
+    {
+        return "Temps Niv 2: " + tempsNiv2 + " Nombre d'accrochage Niv 2: " + nbAccrochageNiv2;
+    }
+    public string VoirStatistiqueNiv3()
+    {
+        return "Temps Niv 3: " + tempsNiv3 + " Nombre d'accrochage Niv 3: " + nbAccrochageNiv3;
+    }
+    public string VoirStatistiqueTotal()
+    {
+        StatistiqueTotal();
+        return "Temps Total: " + tempsTotal + " Nombre d'accrochage Total: " + nbAccrochageTotal;
     }
 
 
     public void FinJeu()
     {
-        temps = Time.time + _tempsperdu;
-        Debug.Log("Ton temps: " + temps);
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().enabled = false;
+
+        Debug.Log(VoirStatistiqueNiv1());
+        Debug.Log(VoirStatistiqueNiv2());
+        //Debug.Log(VoirStatistiqueNiv3());
+        Debug.Log(VoirStatistiqueTotal());
         
-
-
 
     }
 
