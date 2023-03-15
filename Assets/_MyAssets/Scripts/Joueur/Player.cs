@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        Vector3 positionini = new Vector3(48f, 1.38f, -44f);
+        Vector3 positionini = new Vector3(44.96f, 0.992f, -44.51f);
         this.transform.position = positionini ;
         _rbPlayer= GetComponent<Rigidbody>();
     }
@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     {
         
     }
-    //RigidBody ou Gravité demandent d'être un fixedupdate
+    //RigidBody ou Gravitï¿½ demandent d'ï¿½tre un fixedupdate
     private void FixedUpdate()
     {
         MouvementsJoueur();
@@ -40,9 +40,9 @@ public class Player : MonoBehaviour
 
         //transform.Translate(direction * temps * _vitesse);
 
-        //Méthode qui pousse le joueur avec de la force
+        //Mï¿½thode qui pousse le joueur avec de la force
         //_rbPlayer.AddForce(direction * temps * _vitesse);
-        //Méthode qui fait glisser le joueur avec de la vélocité
+        //Mï¿½thode qui fait glisser le joueur avec de la vï¿½locitï¿½
         _rbPlayer.velocity = direction * temps * _vitesse;
 
         //Method to rotate the player
