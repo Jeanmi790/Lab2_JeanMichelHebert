@@ -100,10 +100,9 @@ public class GameManager : MonoBehaviour
         Debug.Log("Temps Total: " + tempsTotal);
         Debug.Log("Nombre d'accrochage Total: " + nbAccrochageTotal);
     }
-    public void VoirStatistiqueNiv1()
+    public string VoirStatistiqueNiv1()
     {
-        Debug.Log("Temps Niv 1: " + tempsNiv1);
-        Debug.Log("Nombre d'accrochage Niv 1: " + nbAccrochageNiv1);
+       return "Temps Niv 1: " + tempsNiv1 + " Nombre d'accrochage Niv 1: " + nbAccrochageNiv1;
     }
 
 

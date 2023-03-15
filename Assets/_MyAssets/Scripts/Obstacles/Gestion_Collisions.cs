@@ -18,7 +18,7 @@ public class Gestion_Collisions : MonoBehaviour
         if ((!_collision) && (collision.gameObject.tag == "Player"))
         {
             _player.GetComponent<MeshRenderer>().material.color = Color.red;
-            //_gameManager.AugmenterPointage();
+            _gameManager.AugmenterPointage();
             
             _collision = true;
         }
