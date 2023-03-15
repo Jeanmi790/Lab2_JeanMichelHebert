@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndGame : MonoBehaviour
 {
@@ -16,7 +14,7 @@ public class EndGame : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         int noScene = SceneManager.GetActiveScene().buildIndex;
-        if (noScene == 1)
+        if (noScene == (SceneManager.sceneCountInBuildSettings - 1))
         {
             if ((!_collision) && (collision.gameObject.tag == "Player"))
             {
@@ -27,8 +25,26 @@ public class EndGame : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(noScene + 1);
+
+            switch (noScene)
+            {
+                case 1:
+                    _gameManager.StatistiqueNiv1(_gameManager.GetPointage(), Time.time);
+                    Debug.Log("Prochain niveau...");
+                    SceneManager.LoadScene(noScene + 1);
+                    break;
+                case 2:
+                    _gameManager.StatistiqueNiv2(_gameManager.GetPointage(), Time.time);
+                    Debug.Log("Prochain niveau...");
+                    SceneManager.LoadScene(noScene + 1);
+                    break;
+                case 3:
+                    _gameManager.StatistiqueNiv3(_gameManager.GetPointage(), Time.time);
+                    Debug.Log("Dernier niveau...");
+                    break;
+            }
+
         }
-   
+
     }
 }
