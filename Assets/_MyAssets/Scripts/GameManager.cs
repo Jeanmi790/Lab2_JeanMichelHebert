@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Bienvenu, vous devez trouver la sortie du donjon.");
         Debug.Log("Vous devez éviter de toucher au mur avec des piques et les trappes au sol.");
         Debug.Log("Chaque obstacle vous rajoute une pénalité sur votre temps.");
+        Debug.Log("Il y a un coffre dans le niveau qui permet de faire disparaitre des obstacles pour atteindre la fin.");
     }
 
     public void AugmenterPointage()
