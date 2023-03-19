@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     int nbAccrochageNiv3;
     int nbAccrochageTotal;
 
-    
+
     public float TempsNiv1 { get; set; }
     public float TempsNiv2 { get; set; }
     public float TempsNiv3 { get; set; }
@@ -46,16 +46,17 @@ public class GameManager : MonoBehaviour
     {
         Instructions();
         _pointage = 0;
-       
+
 
 
     }
     void Instructions()
     {
-        Debug.Log("Bienvenu, vous devez trouver la sortie du donjon.");
+        Debug.Log("Bienvenu, vous devez trouver la sortie du donjon qui est une porte en bois.");
         Debug.Log("Vous devez éviter de toucher au mur avec des piques et les trappes au sol.");
         Debug.Log("Chaque obstacle vous rajoute une pénalité sur votre temps.");
         Debug.Log("Il y a un coffre dans le niveau qui permet de faire disparaitre des obstacles pour atteindre la fin.");
+        Debug.Log("Vous avez 3 niveaux à compléter pour gagner la partie.");
     }
 
     public void AugmenterPointage()
@@ -80,8 +81,7 @@ public class GameManager : MonoBehaviour
         tempsNiv1 = temps + (1F * accrochages);
 
         nbAccrochageNiv1 = _pointage;
-        //Debug.LogWarning("Temps Niv 1: " + tempsNiv1);
-        //Debug.LogWarning("Nombre d'accrochage Niv 1: " + nbAccrochageNiv1);
+
 
     }
 
@@ -89,23 +89,20 @@ public class GameManager : MonoBehaviour
     {
         tempsNiv2 = temps + (1F * accrochages);
         nbAccrochageNiv2 = _pointage - nbAccrochageNiv1;
-        //Debug.Log("Temps Niv 2: " + tempsNiv2);
-        //Debug.Log("Nombre d'accrochage Niv 2: " + nbAccrochageNiv2);
+
     }
 
     public void StatistiqueNiv3(int accrochages, float temps)
     {
         tempsNiv3 = temps + (1F * accrochages);
         nbAccrochageNiv3 = _pointage - nbAccrochageNiv1 - nbAccrochageNiv2;
-        //Debug.Log("Temps Niv 3: " + tempsNiv3);
-        //Debug.Log("Nombre d'accrochage Niv 3: " + nbAccrochageNiv3);
+
     }
     public void StatistiqueTotal()
     {
         tempsTotal = tempsNiv1 + tempsNiv2 + tempsNiv3;
         nbAccrochageTotal = nbAccrochageNiv1 + nbAccrochageNiv2 + nbAccrochageNiv3;
-        //Debug.Log("Temps Total: " + tempsTotal);
-        //Debug.Log("Nombre d'accrochage Total: " + nbAccrochageTotal);
+
     }
     public string VoirStatistiqueNiv1()
     {
@@ -133,7 +130,7 @@ public class GameManager : MonoBehaviour
         Debug.Log(VoirStatistiqueNiv2());
         //Debug.Log(VoirStatistiqueNiv3());
         Debug.Log(VoirStatistiqueTotal());
-        
+
 
     }
 

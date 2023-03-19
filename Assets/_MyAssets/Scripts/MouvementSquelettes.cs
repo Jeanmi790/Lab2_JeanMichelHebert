@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class MouvementSkeletes : MonoBehaviour
+public class MouvementSquelettes : MonoBehaviour
 {
     // Start is called before the first frame update
 
