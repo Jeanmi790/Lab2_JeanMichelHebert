@@ -12,7 +12,7 @@ public class MouvementSquelettes : MonoBehaviour
     [SerializeField] Vector3 positionFinale;
 
     
-    [SerializeField] float rotationYFinale;
+    [SerializeField] float rotationYFinale = 180;
 
     [SerializeField] float vitesse;
     float temps; 
@@ -26,14 +26,21 @@ public class MouvementSquelettes : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Vector3 direction = new Vector3(0f, 0f, 1f);
-        
-        if(transform.position != positionFinale)
+
+        if (transform.position.z >= positionFinale.z)
         {
-            transform.Translate(direction * temps * vitesse);
+            direction.z = -1f;
         }
+        if (transform.position.z == positionFinale.z)
+        {
+            direction.z = 1f;
+        }
+
+        transform.Translate(direction * temps * vitesse);
+        
        
        
     }
