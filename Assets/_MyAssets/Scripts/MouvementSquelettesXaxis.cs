@@ -28,27 +28,27 @@ public class MouvementSquelettesXaxis : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = new Vector3(1f, 0f, 0f);
+        Vector3 direction = new Vector3(0f, 0f, 1f);
 
         if (transform.position.x > positionFinale.x)
         {
-            direction.x = 1f;
+            direction.z = 1f;
             transform.Rotate(0, rotationYFinale, 0);
         }
         if (transform.position.x == positionFinale.x)
         {
-            direction.x = -1f;
+            direction.z = -1f;
             transform.Rotate(0, -(rotationYFinale), 0);
         }
         if (transform.position.x < positionDebut.x)
         {
-            direction.x = 1f;
+            direction.z = 1f;
             transform.Rotate(0, rotationYFinale, 0);
         }
 
 
         transform.Translate(direction * temps * vitesse);
-        ;
+        
 
 
     }
