@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] protected float _vitesse = 1000;
+    [SerializeField] protected float _vitesse = 700;
     [SerializeField] protected float _rotation = 10f;
     //[SerializeField] private float _sprint = 2;
     Rigidbody _rbPlayer;
@@ -46,10 +46,10 @@ public class Player : MonoBehaviour
         _rbPlayer.velocity = direction * temps * _vitesse;
 
         //Method to rotate the player
-        if(direction != Vector3.zero)
-        {
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(direction), _rotation * temps);
-        }
+        //if(direction != Vector3.zero)
+        //{
+        //    transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(direction), _rotation * temps);
+        //}
         
 
         

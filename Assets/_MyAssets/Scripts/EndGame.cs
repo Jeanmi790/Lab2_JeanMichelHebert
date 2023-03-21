@@ -35,21 +35,23 @@ public class EndGame : MonoBehaviour
                     _gameManager.StatistiqueNiv2(_gameManager.GetPointage(), Time.time);
                     Debug.Log("Prochain niveau...");
                     _gameManager.ResetPointage();
-                    
-                    //SceneManager.LoadScene(noScene + 1);
+
+                    SceneManager.LoadScene(noScene + 1);
                     Debug.Log(_gameManager.VoirStatistiqueNiv2());
-                    _gameManager.FinJeu();
-                    _player.FinDeJeu();
+
+
 
                     break;
                 case 2:
                     _gameManager.StatistiqueNiv3(_gameManager.GetPointage(), Time.time);
                     Debug.Log("Dernier niveau...");
                     _gameManager.ResetPointage();
+                    _gameManager.VoirStatistiqueNiv3();
                     _gameManager.StatistiqueTotal();
                     _gameManager.FinJeu();
+                    _player.FinDeJeu();
+
                     //SceneManager.LoadScene(noScene + 1);
-                    //Debug.Log(_gameManager.VoirStatistiqueNiv3());
 
                     break;
 
