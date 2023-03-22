@@ -46,8 +46,6 @@ public class EndGame : MonoBehaviour
                     _gameManager.StatistiqueNiv3(_gameManager.GetPointage(), Time.time);
                     Debug.Log("Dernier niveau...");
                     _gameManager.ResetPointage();
-                    _gameManager.VoirStatistiqueNiv3();
-                    _gameManager.StatistiqueTotal();
                     _gameManager.FinJeu();
                     _player.FinDeJeu();
 

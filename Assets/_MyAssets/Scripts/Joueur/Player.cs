@@ -9,11 +9,12 @@ public class Player : MonoBehaviour
     [SerializeField] protected float _vitesse = 700;
     [SerializeField] protected float _rotation = 10f;
     //[SerializeField] private float _sprint = 2;
+    [SerializeField] protected Vector3 positionini;
     Rigidbody _rbPlayer;
 
     private void Start()
     {
-        Vector3 positionini = new Vector3(44.96f, 0.992f, -44.51f);
+        
         this.transform.position = positionini ;
         _rbPlayer= GetComponent<Rigidbody>();
     }
@@ -21,7 +22,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        
+
+    
     }
     //RigidBody ou Gravit� demandent d'�tre un fixedupdate
     private void FixedUpdate()
@@ -41,8 +43,7 @@ public class Player : MonoBehaviour
         //transform.Translate(direction * temps * _vitesse);
 
         //M�thode qui pousse le joueur avec de la force
-        //_rbPlayer.AddForce(direction * temps * _vitesse);
-        //M�thode qui fait glisser le joueur avec de la v�locit�
+
         _rbPlayer.velocity = direction * temps * _vitesse;
 
         //Method to rotate the player
@@ -50,9 +51,14 @@ public class Player : MonoBehaviour
         //{
         //    transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(direction), _rotation * temps);
         //}
-        
 
-        
+        direction.Normalize();
+
+        if (direction != Vector3.zero) { 
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, _rotation * Time.deltaTime);
+        }
+
     }
     public void FinDeJeu()
     {

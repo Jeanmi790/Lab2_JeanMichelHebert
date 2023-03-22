@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     void Instructions()
     {
         Debug.Log("Bienvenu, vous devez trouver la sortie du donjon qui est une porte en bois.");
-        Debug.Log("Vous devez éviter de toucher au mur avec des piques et les trappes au sol.");
+        Debug.Log("Vous devez éviter de toucher au mur avec des piques, les trappes au sol et les squelettes.");
         Debug.Log("Chaque obstacle vous rajoute une pénalité sur votre temps.");
         Debug.Log("Il y a un coffre dans le niveau qui permet de faire disparaitre des obstacles pour atteindre la fin.");
         Debug.Log("Vous avez 3 niveaux à compléter pour gagner la partie.");
@@ -128,7 +128,7 @@ public class GameManager : MonoBehaviour
 
         Debug.Log(VoirStatistiqueNiv1());
         Debug.Log(VoirStatistiqueNiv2());
-        //Debug.Log(VoirStatistiqueNiv3());
+        Debug.Log(VoirStatistiqueNiv3());
         Debug.Log(VoirStatistiqueTotal());
 
 
