@@ -4600,7 +4600,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positionDebut: {x: -28.48772, y: 0, z: 28.39}
   positionFinale: {x: -28.48772, y: 0, z: 47.22}
-  rotationYFinale: 180
   vitesse: 3
 --- !u!1001 &1070260166
 PrefabInstance:
@@ -5486,15 +5485,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 694269049580337368, guid: 4d39bcd57cb95e940b557398ab6043e6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 694269049580337368, guid: 4d39bcd57cb95e940b557398ab6043e6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 694269049580337368, guid: 4d39bcd57cb95e940b557398ab6043e6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 694269049580337368, guid: 4d39bcd57cb95e940b557398ab6043e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5611,7 +5610,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positionDebut: {x: 9.15, y: 0, z: -22.86}
   positionFinale: {x: 9.15, y: 0, z: -19.25}
-  rotationYFinale: 180
   vitesse: 1
 --- !u!1001 &1335446056
 PrefabInstance:
@@ -6079,7 +6077,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positionDebut: {x: -10.36, y: 0, z: -21.21}
   positionFinale: {x: -10.36, y: 0, z: 2.3}
-  rotationYFinale: 180
   vitesse: 3
 --- !u!1001 &1452200134
 PrefabInstance:
@@ -7032,7 +7029,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positionDebut: {x: 3.87, y: 0, z: 35.89}
   positionFinale: {x: 3.87, y: 0, z: 47.88}
-  rotationYFinale: 180
   vitesse: 2
 --- !u!1 &1689469563
 GameObject:
