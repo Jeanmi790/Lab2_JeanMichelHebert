@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MouvementSquelettesXaxis : MonoBehaviour
@@ -11,7 +9,7 @@ public class MouvementSquelettesXaxis : MonoBehaviour
     [SerializeField] Vector3 positionFinale;
 
 
-    [SerializeField] float rotationYFinale = 180;
+    float rotationYFinale = 180;
 
     [SerializeField] float vitesse;
     float temps;
@@ -48,7 +46,7 @@ public class MouvementSquelettesXaxis : MonoBehaviour
 
 
         transform.Translate(direction * temps * vitesse);
-        
+
 
 
     }

@@ -3,7 +3,7 @@ using UnityEngine;
 public class MouvementSquelettesZaxis : MonoBehaviour
 {
     // Start is called before the first frame update
-
+    
     [SerializeField] Vector3 positionDebut;
     [SerializeField] Vector3 positionFinale;
 
@@ -31,21 +31,22 @@ public class MouvementSquelettesZaxis : MonoBehaviour
         if (transform.position.z > positionFinale.z)
         {
             direction.z = 1f;
-            transform.Rotate(0, rotationYFinale, 0);
+           transform.Rotate(0, rotationYFinale, 0);
         }
         if (transform.position.z == positionFinale.z)
         {
             direction.z = -1f;
-            transform.Rotate(0, -(rotationYFinale), 0);
+           transform.Rotate(0, -(rotationYFinale), 0);
         }
         if (transform.position.z < positionDebut.z)
         {
             direction.z = 1f;
-            transform.Rotate(0, rotationYFinale, 0);
+           transform.Rotate(0, rotationYFinale, 0);
         }
-
+        
         transform.Translate(direction * temps * vitesse);
 
+       
 
     }
 
