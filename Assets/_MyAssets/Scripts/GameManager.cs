@@ -88,14 +88,14 @@ public class GameManager : MonoBehaviour
     public void StatistiqueNiv2(int accrochages, float temps)
     {
         tempsNiv2 = temps + (1F * accrochages);
-        nbAccrochageNiv2 = _pointage - nbAccrochageNiv1;
+        nbAccrochageNiv2 = _pointage ;
 
     }
 
     public void StatistiqueNiv3(int accrochages, float temps)
     {
         tempsNiv3 = temps + (1F * accrochages);
-        nbAccrochageNiv3 = _pointage - nbAccrochageNiv1 - nbAccrochageNiv2;
+        nbAccrochageNiv3 = _pointage ;
 
     }
     public void StatistiqueTotal()
