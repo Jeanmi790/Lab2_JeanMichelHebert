@@ -73,7 +73,9 @@ public class GameManager : MonoBehaviour
     }
     public void ResetPointage()
     {
+        Debug.Log("Avant reset"+_pointage);
         _pointage = 0;
+        Debug.Log("Après reset" + _pointage);
     }
 
     public void StatistiqueNiv1(int accrochages, float temps)
