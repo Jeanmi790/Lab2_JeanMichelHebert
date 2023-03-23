@@ -15,16 +15,7 @@ public class GameManager : MonoBehaviour
     int nbAccrochageTotal;
 
 
-    public float TempsNiv1 { get; set; }
-    public float TempsNiv2 { get; set; }
-    public float TempsNiv3 { get; set; }
-    public float TempsTotal { get; set; }
-    public int NbAccrochageNiv1 { get; set; }
-    public int NbAccrochageNiv2 { get; set; }
-    public int NbAccrochageNiv3 { get; set; }
-    public int NbAccrochageTotal { get; set; }
-    public int NbAccrochageTotal1 { get; set; }
-    public int _Pointage { get; set; }
+
 
     //Player p = FindGameObjectOfType("Player");
 
@@ -54,9 +45,9 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Bienvenu, vous devez trouver la sortie du donjon qui est une porte en bois.");
         Debug.Log("Vous devez éviter de toucher au mur avec des piques, les trappes au sol et les squelettes.");
-        Debug.Log("Chaque obstacle vous rajoute une pénalité sur votre temps.");
+        Debug.Log("Chaque obstacle vous rajoute une pénalité sur votre temps d'une seconde.");
         Debug.Log("Il y a un coffre dans le niveau qui permet de faire disparaitre des obstacles pour atteindre la fin.");
-        Debug.Log("Vous avez 3 niveaux à compléter pour gagner la partie.");
+        Debug.Log("Vous avez 3 niveaux à compléter.");
     }
 
     public void AugmenterPointage()
@@ -73,9 +64,9 @@ public class GameManager : MonoBehaviour
     }
     public void ResetPointage()
     {
-        Debug.Log("Avant reset"+_pointage);
+        //Debug.Log("Avant reset"+_pointage);
         _pointage = 0;
-        Debug.Log("Après reset" + _pointage);
+        //Debug.Log("Après reset" + _pointage);
     }
 
     public void StatistiqueNiv1(int accrochages, float temps)

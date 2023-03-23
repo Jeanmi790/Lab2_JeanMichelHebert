@@ -7235,6 +7235,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerV1
       objectReference: {fileID: 0}
+    - target: {fileID: 3592708820521262929, guid: d1e2279186200164eba204463928f218, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3592708820521262930, guid: d1e2279186200164eba204463928f218, type: 3}
       propertyPath: m_SelectedEditorRenderState
       value: 2
