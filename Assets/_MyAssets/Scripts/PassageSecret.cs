@@ -26,8 +26,9 @@ public class PassageSecret : MonoBehaviour
             
             collision = true;
             player.GetComponent<MeshRenderer>().material.color = Color.green;
-            foreach(GameObject passage in passages) { 
-            passage.SetActive(false);
+            foreach (GameObject passage in passages)
+            {
+                passage.SetActive(false);
             }
 
             Debug.Log("Passage débloqué");

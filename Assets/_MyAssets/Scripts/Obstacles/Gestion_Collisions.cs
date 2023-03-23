@@ -1,5 +1,6 @@
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.ProBuilder;
 
 public class Gestion_Collisions : MonoBehaviour
 {
@@ -20,8 +21,8 @@ public class Gestion_Collisions : MonoBehaviour
 
         if ((!_collision) && (collision.gameObject.tag == "Player"))
         {
-            _player.GetComponent<MeshRenderer>().material.color = Color.red;
-            
+            //_player.GetComponent<MeshRenderer>().material.color = Color.red;
+            _player.GetComponent<ProBuilderMesh>().GetComponent<MeshRenderer>().material.color = Color.red;
             _gameManager.AugmenterPointage();
 
 
@@ -34,7 +35,8 @@ public class Gestion_Collisions : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        _player.GetComponent<MeshRenderer>().material.color = Color.white;
+        //_player.GetComponent<MeshRenderer>().material.color = Color.white;
+        _player.GetComponent<ProBuilderMesh>().GetComponent<MeshRenderer>().material.color = Color.white;
         _collision = false;
     }
 

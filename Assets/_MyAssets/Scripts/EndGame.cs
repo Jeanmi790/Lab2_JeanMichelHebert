@@ -29,16 +29,12 @@ public class EndGame : MonoBehaviour
                     _gameManager.ResetPointage();
                     SceneManager.LoadScene(noScene + 1);
 
-
                     break;
                 case 1:
                     _gameManager.StatistiqueNiv2(_gameManager.GetPointage(), Time.time);
                     Debug.Log("Prochain niveau...");
                     _gameManager.ResetPointage();
-
                     SceneManager.LoadScene(noScene + 1);
-
-
 
 
                     break;
