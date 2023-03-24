@@ -11,7 +11,7 @@ public class MouvementSquelettesXaxis : MonoBehaviour
 
     float rotationYFinale = 180;
 
-    [SerializeField] float vitesse;
+    [SerializeField] float vitesse = 1;
     float temps;
 
 

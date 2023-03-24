@@ -23,7 +23,7 @@ public class Gestion_Collisions : MonoBehaviour
         {
             //_player.GetComponent<MeshRenderer>().material.color = Color.red;
             _player.GetComponent<ProBuilderMesh>().GetComponent<MeshRenderer>().material.color = Color.red;
-            _gameManager.AugmenterPointage();
+            _gameManager.AugmenterAccrochage();
 
 
             _collision = true;

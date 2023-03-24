@@ -2,9 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    int _pointage;
-    float temps;
-    private float _tempsperdu;
+    int _accrochage;
     float tempsNiv1;
     float tempsNiv2;
     float tempsNiv3;
@@ -13,11 +11,6 @@ public class GameManager : MonoBehaviour
     int nbAccrochageNiv2;
     int nbAccrochageNiv3;
     int nbAccrochageTotal;
-
-
-
-
-    //Player p = FindGameObjectOfType("Player");
 
     private void Awake()
     {
@@ -32,13 +25,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         Instructions();
-        _pointage = 0;
-
-
+        _accrochage = 0;
 
     }
     void Instructions()
@@ -50,26 +41,26 @@ public class GameManager : MonoBehaviour
         Debug.Log("Vous avez 3 niveaux à compléter.");
     }
 
-    public void AugmenterPointage()
+    public void AugmenterAccrochage()
     {
-        _pointage++;
+        _accrochage++;
 
     }
-    public int GetPointage()
+
+    public int retournerAccrochage()
     {
-        return _pointage;
+        return _accrochage;
     }
-    public void ResetPointage()
+
+    public void ReinitialiserAccrochage()
     {
-        //Debug.Log("Avant reset"+_pointage);
-        _pointage = 0;
-        //Debug.Log("Après reset" + _pointage);
+        _accrochage = 0;
+        
     }
 
     public void StatistiqueNiv1(int accrochages, float temps)
     {
         tempsNiv1 = temps + (1F * accrochages);
-
         nbAccrochageNiv1 = accrochages;
 
 
@@ -77,16 +68,15 @@ public class GameManager : MonoBehaviour
 
     public void StatistiqueNiv2(int accrochages, float temps)
     {
-        tempsNiv2 = temps + (1F * accrochages);
-        Debug.Log("nbaccro " + accrochages);
+        tempsNiv2 = temps + (1F * accrochages)-tempsNiv1;
         nbAccrochageNiv2 = accrochages;
-        Debug.Log("nbaccro " + nbAccrochageNiv2);
 
     }
 
     public void StatistiqueNiv3(int accrochages, float temps)
-    {
-        tempsNiv3 = temps + (1F * accrochages);
+    {   
+        tempsNiv3 = temps + (1F * accrochages)-tempsNiv2;
+       
         nbAccrochageNiv3 = accrochages;
 
     }
@@ -96,18 +86,22 @@ public class GameManager : MonoBehaviour
         nbAccrochageTotal = nbAccrochageNiv1 + nbAccrochageNiv2 + nbAccrochageNiv3;
 
     }
+
     public string VoirStatistiqueNiv1()
     {
         return "Temps Niv 1: " + tempsNiv1 + " Nombre d'accrochage Niv 1: " + nbAccrochageNiv1;
     }
+
     public string VoirStatistiqueNiv2()
     {
         return "Temps Niv 2: " + tempsNiv2 + " Nombre d'accrochage Niv 2: " + nbAccrochageNiv2;
     }
+
     public string VoirStatistiqueNiv3()
     {
         return "Temps Niv 3: " + tempsNiv3 + " Nombre d'accrochage Niv 3: " + nbAccrochageNiv3;
     }
+
     public string VoirStatistiqueTotal()
     {
         StatistiqueTotal();
