@@ -53,9 +53,6 @@ public class GameManager : MonoBehaviour
     public void AugmenterPointage()
     {
         _pointage++;
-        // _tempsperdu += 1f;
-        // Debug.Log("Bléssé:" + _pointage);
-
 
     }
     public int GetPointage()
@@ -81,7 +78,9 @@ public class GameManager : MonoBehaviour
     public void StatistiqueNiv2(int accrochages, float temps)
     {
         tempsNiv2 = temps + (1F * accrochages);
+        Debug.Log("nbaccro " + accrochages);
         nbAccrochageNiv2 = accrochages;
+        Debug.Log("nbaccro " + nbAccrochageNiv2);
 
     }
 

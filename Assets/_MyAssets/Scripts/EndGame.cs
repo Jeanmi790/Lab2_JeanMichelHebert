@@ -17,7 +17,7 @@ public class EndGame : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         int noScene = SceneManager.GetActiveScene().buildIndex;
-        Debug.Log(SceneManager.sceneCountInBuildSettings);
+        
         if ((!_collision) && (collision.gameObject.tag == "Player"))
         {
 
@@ -32,6 +32,7 @@ public class EndGame : MonoBehaviour
                     break;
                 case 1:
                     _gameManager.StatistiqueNiv2(_gameManager.GetPointage(), Time.time);
+                    Debug.Log("POINTAGE: " + _gameManager.GetPointage());
                     Debug.Log("Dernier niveau...");
                     _gameManager.ResetPointage();
                     SceneManager.LoadScene(noScene + 1);
