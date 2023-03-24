@@ -13,13 +13,13 @@ public class EndGame : MonoBehaviour
         _gameManager = FindObjectOfType<GameManager>();
         _player = FindObjectOfType<Player>();
     }
-   
-    
+
+
 
     private void OnCollisionEnter(Collision collision)
     {
         int noScene = SceneManager.GetActiveScene().buildIndex;
-        
+
         if ((!_collision) && (collision.gameObject.tag == "Player"))
         {
 
@@ -27,23 +27,25 @@ public class EndGame : MonoBehaviour
             {
                 case 0:
                     _gameManager.StatistiqueNiv1(_gameManager.retournerAccrochage(), Time.time);
-                    _collision= true;
+                    _collision = true;
                     Debug.Log("Prochain niveau...");
                     _gameManager.ReinitialiserAccrochage();
                     SceneManager.LoadScene(noScene + 1);
 
                     break;
+
                 case 1:
                     _gameManager.StatistiqueNiv2(_gameManager.retournerAccrochage(), Time.time);
-                    _collision= true;
+                    _collision = true;
                     Debug.Log("Dernier niveau...");
                     _gameManager.ReinitialiserAccrochage();
                     SceneManager.LoadScene(noScene + 1);
 
                     break;
+
                 case 2:
                     _gameManager.StatistiqueNiv3(_gameManager.retournerAccrochage(), Time.time);
-                    _collision= true;
+                    _collision = true;
                     _gameManager.FinJeu();
                     _player.FinDeJeu();
 

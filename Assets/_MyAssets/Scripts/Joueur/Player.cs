@@ -5,8 +5,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] protected float _vitesse = 700;
     [SerializeField] protected float _rotation = 2f;
-
     [SerializeField] protected Vector3 positionini;
+   
     Rigidbody _rbPlayer;
 
     private void Start()
@@ -15,8 +15,6 @@ public class Player : MonoBehaviour
         this.transform.position = positionini;
         _rbPlayer = GetComponent<Rigidbody>();
     }
-
-
     
     private void FixedUpdate()
     {
@@ -41,7 +39,6 @@ public class Player : MonoBehaviour
         //Vérifier que la direction n'est pas 0
         if (direction != Vector3.zero)
         {
-
             //Enregistrer le vecteur en rotation
             Quaternion targetRotation = Quaternion.LookRotation(direction);
 
@@ -49,6 +46,7 @@ public class Player : MonoBehaviour
         }
 
     }
+
     public void FinDeJeu()
     {
         this.gameObject.SetActive(false);

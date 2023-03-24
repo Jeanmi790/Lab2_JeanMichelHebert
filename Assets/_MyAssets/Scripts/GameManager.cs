@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
         _accrochage = 0;
 
     }
+
     void Instructions()
     {
         Debug.Log("Bienvenu, vous devez trouver la sortie du donjon qui est une porte en bois.");
