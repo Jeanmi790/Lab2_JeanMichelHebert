@@ -25,6 +25,7 @@ public class EndGame : MonoBehaviour
             {
                 case 0:
                     _gameManager.StatistiqueNiv1(_gameManager.GetPointage(), Time.time);
+                    _collision= true;
                     Debug.Log("Prochain niveau...");
                     _gameManager.ResetPointage();
                     SceneManager.LoadScene(noScene + 1);
@@ -32,7 +33,7 @@ public class EndGame : MonoBehaviour
                     break;
                 case 1:
                     _gameManager.StatistiqueNiv2(_gameManager.GetPointage(), Time.time);
-                    Debug.Log("POINTAGE: " + _gameManager.GetPointage());
+                    _collision= true;
                     Debug.Log("Dernier niveau...");
                     _gameManager.ResetPointage();
                     SceneManager.LoadScene(noScene + 1);
@@ -41,7 +42,7 @@ public class EndGame : MonoBehaviour
                     break;
                 case 2:
                     _gameManager.StatistiqueNiv3(_gameManager.GetPointage(), Time.time);
-                    //_gameManager.ResetPointage();
+                    _collision= true;
                     _gameManager.FinJeu();
                     _player.FinDeJeu();
 
